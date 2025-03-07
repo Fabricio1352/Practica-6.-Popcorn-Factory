@@ -72,15 +72,15 @@
             />
 
 
-        <GridView
-            android:id="@+id/mseries_catalogo"
-            android:layout_width="match_parent"
-            android:layout_height="290dp"
-            android:numColumns="3"
-            android:layout_marginTop="10dp"
-            android:paddingHorizontal="6dp"/>
+
 
 
     </LinearLayout>
-
+    <GridView
+        android:id="@+id/series_catalogo"
+        android:layout_width="match_parent"
+        android:layout_height="290dp"
+        android:numColumns="3"
+        android:layout_marginTop="18dp"
+        android:paddingHorizontal="6dp"/>
 </LinearLayout>

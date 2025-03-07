@@ -12,9 +12,11 @@ import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.navigateUp
 import androidx.navigation.ui.setupActionBarWithNavController
+import com.example.practica6popcorn.catalogo.PeliculaAdapter
 import com.example.practica6popcorn.databinding.ActivityDetallePeliculaBinding
 
 class detalle_pelicula : AppCompatActivity() {
+
 
     override fun onCreate(savedInstanceState: Bundle?){
         super.onCreate(savedInstanceState)
