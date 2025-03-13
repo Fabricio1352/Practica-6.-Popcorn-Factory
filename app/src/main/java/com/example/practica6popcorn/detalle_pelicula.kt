@@ -1,6 +1,8 @@
 package com.example.practica6popcorn
 
+import android.content.Intent
 import android.os.Bundle
+import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.activity.enableEdgeToEdge
@@ -25,12 +27,33 @@ class detalle_pelicula : AppCompatActivity() {
         val iv_pelicula_image: ImageView = findViewById(R.id.iv_pelicula_imagen)
         val tv_nombre_pelicula: TextView = findViewById(R.id.tv_nombre_pelicula)
         val tv_pelicula_desc: TextView = findViewById(R.id.tv_pelicula_desc)
+        val seatsLeft: TextView = findViewById(R.id.seatsLeft)
+        val buyTickets: Button = findViewById(R.id.buyTickets)
 
         val bundle = intent.extras
+
+        var ns = 0
+
         if(bundle!=null){
+            ns =  bundle.getInt("numberSeats")
             iv_pelicula_image.setImageResource(bundle.getInt("header"))
             tv_nombre_pelicula.setText(bundle.getString("titulo"))
             tv_pelicula_desc.setText(bundle.getString("sinopsis"))
+            seatsLeft.setText("$ns seats available")
+//            seatsLeft.setText(String.format("%d seats available", bundle.getInt("numberSeats")));
+        }
+
+
+        if(ns==0){
+            buyTickets.isActivated = false
+
+        }else{
+            buyTickets.setOnClickListener {
+                val intent: Intent = Intent(this, SeatSelection::class.java)
+
+
+
+            }
         }
 
     }
